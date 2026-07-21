@@ -1,0 +1,279 @@
+<title>Partiu! Aprender e Empreender — Paulínia · Visão Executiva</title>
+<style>
+  :root{
+    --paper:#F6F4EE;
+    --ink:#1B2430;
+    --ink-soft:#4B5568;
+    --navy:#1F3A5F;
+    --navy-deep:#152A44;
+    --teal:#0E6B5C;
+    --gold:#9C6F0B;
+    --line:#DCD5C4;
+    --card:#FFFFFF;
+    --ps:#D4874A; --dh:#4C7FA8; --og:#6E9B5C; --ct:#C9A227; --ead:#8B76A8; --ci:#C1685C; --rec:#B7B2A5;
+    --shadow: 0 1px 2px rgba(27,36,48,.06), 0 4px 14px rgba(27,36,48,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#181C22; --ink:#EDEBE4; --ink-soft:#A8AEB8;
+      --navy:#345D8A; --navy-deep:#1E3550; --teal:#3E9C87; --gold:#D2A23E;
+      --line:#333A44; --card:#20242C;
+      --ps:#E29A5E; --dh:#6FA0CC; --og:#8AB871; --ct:#DDBB49; --ead:#A794C7; --ci:#D68076; --rec:#7A7E86;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#181C22; --ink:#EDEBE4; --ink-soft:#A8AEB8;
+    --navy:#345D8A; --navy-deep:#1E3550; --teal:#3E9C87; --gold:#D2A23E;
+    --line:#333A44; --card:#20242C;
+    --ps:#E29A5E; --dh:#6FA0CC; --og:#8AB871; --ct:#DDBB49; --ead:#A794C7; --ci:#D68076; --rec:#7A7E86;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.35);
+  }
+  :root[data-theme="light"]{
+    --paper:#F6F4EE; --ink:#1B2430; --ink-soft:#4B5568;
+    --navy:#1F3A5F; --navy-deep:#152A44; --teal:#0E6B5C; --gold:#9C6F0B;
+    --line:#DCD5C4; --card:#FFFFFF;
+    --ps:#D4874A; --dh:#4C7FA8; --og:#6E9B5C; --ct:#C9A227; --ead:#8B76A8; --ci:#C1685C; --rec:#B7B2A5;
+    --shadow: 0 1px 2px rgba(27,36,48,.06), 0 4px 14px rgba(27,36,48,.06);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-variant-numeric:tabular-nums;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ max-width:1180px; margin:0 auto; padding:0 0 48px; }
+
+  /* ---------- Header ---------- */
+  header{
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy));
+    color:#F3F1EA; padding:34px 40px 30px; position:relative; overflow:hidden;
+  }
+  header::after{
+    content:""; position:absolute; right:-60px; top:-60px; width:260px; height:260px;
+    border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
+  }
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#C9D3DE; font-weight:600;
+  }
+  h1{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+    font-size:2.1rem; line-height:1.15; margin:.35rem 0 .5rem; text-wrap:balance; font-weight:600;
+    max-width:820px;
+  }
+  .subhead{ color:#D7DEE7; font-size:.98rem; max-width:760px; line-height:1.5; }
+  .meta-row{ display:flex; gap:28px; flex-wrap:wrap; margin-top:20px; }
+  .meta-item{ font-size:.82rem; color:#C9D3DE; }
+  .meta-item b{ display:block; color:#fff; font-size:1rem; font-weight:600; margin-top:2px; }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:30px 40px 0; }
+  .section-title{
+    font-family:Georgia,"Iowan Old Style",serif; font-size:1.05rem; font-weight:600;
+    color:var(--navy); margin:0 0 4px; letter-spacing:.01em;
+  }
+  .section-sub{ font-size:.82rem; color:var(--ink-soft); margin:0 0 16px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline{
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px 24px 16px;
+    box-shadow:var(--shadow);
+  }
+  .tl-months{ position:relative; height:20px; margin-left:168px; border-bottom:1px solid var(--line); margin-bottom:6px;}
+  .tl-month{ position:absolute; top:0; font-size:.68rem; color:var(--ink-soft); letter-spacing:.03em; transform:translateX(2px); }
+  .tl-row{ display:flex; align-items:center; height:30px; }
+  .tl-label{ width:168px; flex:0 0 168px; font-size:.78rem; font-weight:600; color:var(--ink); padding-right:10px; }
+  .tl-track{ position:relative; flex:1; height:16px; background:transparent; }
+  .tl-bar{ position:absolute; top:0; height:16px; border-radius:4px; opacity:.92; }
+  .tl-bar.dim{ opacity:.5; }
+  .tl-marker{ position:absolute; top:-4px; width:2px; height:24px; background:var(--gold); }
+  .tl-marker::after{
+    content: attr(data-label); position:absolute; top:-16px; left:50%; transform:translateX(-50%);
+    font-size:.62rem; color:var(--gold); white-space:nowrap; font-weight:700;
+  }
+  .tl-holidays{ position:relative; height:10px; margin-left:168px; }
+  .tl-hol{ position:absolute; top:0; width:2px; height:10px; background:var(--rec); }
+
+  /* ---------- Milestones ---------- */
+  .milestones{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:18px; }
+  .m-card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 14px 12px;
+    box-shadow:var(--shadow);
+  }
+  .m-tag{ font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--ink-soft); }
+  .m-date{ font-family:Georgia,serif; font-size:1.3rem; font-weight:600; color:var(--navy); margin-top:4px; }
+  .m-note{ font-size:.72rem; color:var(--ink-soft); margin-top:2px; }
+
+  /* ---------- Recommendation ---------- */
+  .reco{
+    margin-top:24px; background:linear-gradient(135deg, var(--teal), #0B5548);
+    color:#F1FBF8; border-radius:12px; padding:22px 26px; box-shadow:var(--shadow);
+    display:grid; grid-template-columns:1.15fr .85fr; gap:24px; align-items:center;
+  }
+  .reco h2{ font-family:Georgia,serif; font-size:1.15rem; margin:0 0 8px; font-weight:600; }
+  .reco p{ font-size:.86rem; line-height:1.55; margin:0; color:#DFF4EE; }
+  .reco-badge{ display:inline-block; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+    background:rgba(255,255,255,.16); padding:4px 10px; border-radius:20px; margin-bottom:10px; font-weight:700;}
+  .mini-compare{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .mini-cell{ background:rgba(255,255,255,.1); border-radius:8px; padding:8px 10px; text-align:center; }
+  .mini-cell.win{ background:rgba(255,255,255,.28); outline:2px solid rgba(255,255,255,.55); }
+  .mini-cell .k{ font-size:.66rem; text-transform:uppercase; opacity:.85; letter-spacing:.05em;}
+  .mini-cell .v{ font-family:Georgia,serif; font-size:1.05rem; font-weight:700; margin-top:2px; }
+
+  /* ---------- Legend + footnote ---------- */
+  .legend{ display:flex; flex-wrap:wrap; gap:16px; margin-top:22px; padding:14px 18px; background:var(--card);
+    border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow);}
+  .leg-item{ display:flex; align-items:center; gap:7px; font-size:.76rem; color:var(--ink-soft); }
+  .leg-swatch{ width:12px; height:12px; border-radius:3px; flex:0 0 auto; }
+
+  .footnote{ font-size:.72rem; color:var(--ink-soft); margin-top:16px; line-height:1.6; max-width:980px; }
+  .footnote b{ color:var(--ink); }
+
+  @media (max-width: 900px){
+    header{padding:26px 20px;} section{padding:22px 20px 0;}
+    .milestones{ grid-template-columns:repeat(2,1fr); }
+    .reco{ grid-template-columns:1fr; }
+    .mini-compare{ grid-template-columns:repeat(2,1fr); }
+    .tl-label{ width:110px; flex-basis:110px; font-size:.7rem;}
+    .tl-months{ margin-left:110px; }
+    .tl-holidays{ margin-left:110px; }
+  }
+</style>
+
+<div class="page">
+  <header>
+    <div class="eyebrow">Instituto da Criança · Sebrae · Petrobras — Edital Socioambiental 2023.2</div>
+    <h1>Partiu! Aprender e Empreender — Cronograma Executivo de Paulínia</h1>
+    <div class="subhead">Palestra de Sensibilização → Desenvolvimento Humano → Oficina de Gestão → Curso Técnico → EAD → Consultoria Individual</div>
+    <div class="meta-row">
+      <div class="meta-item">Período total<b>11/08/2026 — 06/03/2027</b></div>
+      <div class="meta-item">Cenário recomendado<b>3 salas · DH 5x/semana</b></div>
+      <div class="meta-item">Turmas de DH<b>15 turmas</b></div>
+      <div class="meta-item">Material gerado em<b>21/07/2026</b></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">Linha do tempo — cenário recomendado</div>
+    <div class="section-sub">Cada barra mostra o período ativo da etapa. O traço dourado marca a conclusão da 4ª turma de DH — gatilho para o 1º Curso Técnico.</div>
+    <div class="timeline">
+      <div class="tl-months">
+        <div class="tl-month" style="left:0%">AGO/26</div>
+        <div class="tl-month" style="left:13.7%">SET/26</div>
+        <div class="tl-month" style="left:27%">OUT/26</div>
+        <div class="tl-month" style="left:40.7%">NOV/26</div>
+        <div class="tl-month" style="left:54%">DEZ/26</div>
+        <div class="tl-month" style="left:67.7%">JAN/27</div>
+        <div class="tl-month" style="left:81.4%">FEV/27</div>
+        <div class="tl-month" style="left:93.8%">MAR/27</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-label">Palestras (PS)</div>
+        <div class="tl-track"><div class="tl-bar" style="left:4.4%;width:28.8%;background:var(--ps)"></div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">Desenv. Humano (DH)</div>
+        <div class="tl-track">
+          <div class="tl-bar" style="left:10.2%;width:31.9%;background:var(--dh)"></div>
+          <div class="tl-marker" data-label="4ª turma 21/09" style="left:18.1%"></div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">Oficina de Gestão (OG)</div>
+        <div class="tl-track"><div class="tl-bar" style="left:18.1%;width:27.4%;background:var(--og)"></div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">Cursos Técnicos (CT)</div>
+        <div class="tl-track"><div class="tl-bar" style="left:25.7%;width:57.1%;background:var(--ct)"></div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">Curso EAD</div>
+        <div class="tl-track"><div class="tl-bar" style="left:30.1%;width:2.2%;background:var(--ead)"></div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">Consultoria Individual</div>
+        <div class="tl-track"><div class="tl-bar dim" style="left:32.7%;width:63.3%;background:var(--ci)"></div></div>
+      </div>
+      <div class="tl-holidays">
+        <div class="tl-hol" style="left:16.4%" title="7 set — Independência"></div>
+        <div class="tl-hol" style="left:31.9%" title="12 out — Aparecida"></div>
+        <div class="tl-hol" style="left:41.2%" title="2 nov — Finados"></div>
+        <div class="tl-hol" style="left:49.1%" title="20 nov — Consciência Negra"></div>
+        <div class="tl-bar" style="left:62.8%;width:8%;height:10px;background:var(--rec);border-radius:2px;" title="Recesso 21/12–08/01"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Marcos principais</div>
+    <div class="section-sub">Todas as datas seguem o Cenário B — ver premissas completas no arquivo Excel anexo.</div>
+    <div class="milestones">
+      <div class="m-card">
+        <div class="m-tag">Início</div>
+        <div class="m-date">11 ago</div>
+        <div class="m-note">1ª Palestra de Sensibilização</div>
+      </div>
+      <div class="m-card">
+        <div class="m-tag">Início DH</div>
+        <div class="m-date">24 ago</div>
+        <div class="m-note">1ª turma de Desenvolvimento Humano</div>
+      </div>
+      <div class="m-card">
+        <div class="m-tag">Gatilho CT</div>
+        <div class="m-date">21 set</div>
+        <div class="m-note">4ª turma de DH concluída</div>
+      </div>
+      <div class="m-card">
+        <div class="m-tag">Fase DH completa</div>
+        <div class="m-date">04 nov</div>
+        <div class="m-note">15ª turma de DH concluída</div>
+      </div>
+      <div class="m-card">
+        <div class="m-tag">Fim da trilha</div>
+        <div class="m-date">06 mar</div>
+        <div class="m-note">Última Consultoria Individual (estimado)</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="reco">
+      <div>
+        <span class="reco-badge">Recomendação</span>
+        <h2>Cenário B — 3 salas, Desenvolvimento Humano 5x por semana</h2>
+        <p>Conclui as 15 turmas de DH em 73 dias — o mais rápido entre os 4 cenários avaliados — liberando o maior tempo possível
+        para Oficina de Gestão, Cursos Técnicos, EAD e Consultoria Individual ainda dentro do ano civil, sem cruzar o recesso
+        institucional. Contingência: Cenário D (2 salas, DH 5x/semana), caso a 3ª sala não seja viabilizada.</p>
+      </div>
+      <div class="mini-compare">
+        <div class="mini-cell win"><div class="k">Cenário B</div><div class="v">73 dias</div></div>
+        <div class="mini-cell"><div class="k">Cenário A</div><div class="v">101 dias</div></div>
+        <div class="mini-cell"><div class="k">Cenário D</div><div class="v">116 dias</div></div>
+        <div class="mini-cell"><div class="k">Cenário C</div><div class="v">169 dias</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="legend">
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--ps)"></span>Palestra de Sensibilização</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--dh)"></span>Desenvolvimento Humano</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--og)"></span>Oficina de Gestão</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--ct)"></span>Curso Técnico</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--ead)"></span>Curso EAD</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--ci)"></span>Consultoria Individual</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--rec)"></span>Recesso / feriado</div>
+      <div class="leg-item"><span class="leg-swatch" style="background:var(--gold)"></span>Marco / gatilho</div>
+    </div>
+    <p class="footnote">
+      <b>Como ler este material:</b> as datas seguem premissas explicitadas no cronograma completo (arquivo Excel anexo, aba 01_PREMISSAS) —
+      carga horária do DH (20h), 15 turmas de OG, 10 turmas de Curso Técnico confirmadas e regra "2 Palestras = 1 turma de DH".
+      Duas divergências relevantes entre os documentos do projeto seguem pendentes de validação formal com o Sebrae: a carga horária do DH
+      (20h ou 22h) e a quantidade de turmas de Curso Técnico (10 ou 13). Ver detalhamento completo, os 4 cenários comparados e o quadro de
+      riscos no arquivo <b>Cronograma_Paulinia_Partiu_2026.xlsx</b>.
+    </p>
+  </section>
+</div>
